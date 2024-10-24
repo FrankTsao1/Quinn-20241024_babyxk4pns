@@ -36,19 +36,17 @@
             gesture-detector
         >
             <a-assets>
-                <video 
-                    id="vid" 
-                    autoplay 
-                    loop="true" 
+                <video
+                    id="vid"
                     src="assets/asset.mp4"
-                    ></video>
-                
-                <audio 
-                    id="river" 
-                    src="assets/20241023-BabyHeartSound.mp3" 
                     preload="auto"
-                    ></audio>                
-    
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    playsinline
+                ></video>
             </a-assets>
 
             <a-marker
@@ -64,21 +62,18 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
-            >                              
+            >
                 <a-video
                     src="#vid"
-                    width="16" 
-                    height="9" 
-                    position="0 0 -20"
+                    scale="1 1 1"
+                    position="0 0.1 0"
+                    rotation="-90 0 0"
+                    class="clickable"
+                    gesture-handler
                 ></a-video>
-                
-                <a-entity 
-                    sound="src: #river"
-                    ></a-entity>  
             </a-marker>
 
             <a-entity camera></a-entity>
-            
         </a-scene>
     </body>
 </html>
