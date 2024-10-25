@@ -22,6 +22,9 @@
                     }.bind(this));
                 },
             });
+               arToolkitSource.init(function onReady(){
+                   arToolkitSource.domElement.addEventListener('loadedmetadata',()=>{onResize()})
+               });
         </script>
     </head>
 
